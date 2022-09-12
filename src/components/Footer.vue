@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="copy">by Paulo Amielle | <span>K R A U</span> &copy; 2022</p>
+        <p class="copy">by Paulo Amielle D. Suratos | <span>K R A U</span> &copy; 2022</p>
         <p class="made">Made with Vue JS</p>
     </div>
 </template>
