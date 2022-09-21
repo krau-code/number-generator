@@ -1,5 +1,9 @@
 # number-generator
 
+A simple random number generator specifically for PCSO Lotto Games made with Vue JS  
+
+My Live Link: https://krau-lotto-number-generator.netlify.app/
+
 ## Project setup
 ```
 npm install
