@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <h1>{{ header }}</h1>
-        <p>for Philippine Charity Sweepstakes Office (PCSO) lotto games</p>
+    <div id="flex">
+        <div>
+            <h1>{{ header }}</h1>
+            <p>for Philippine Charity Sweepstakes Office (PCSO) lotto games</p>
+        </div>
+        <text id="side-text">Vue Project</text>
     </div>
 </template>
 
@@ -16,13 +19,11 @@ export default {
 </script>
 
 <style scoped>
-    div {
-        margin: 30px auto;
-        padding: 0 25px;
-    }
-
-    h1,p {
-        text-align: center;
+    #flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
     }
 
     p {
@@ -30,13 +31,27 @@ export default {
         line-height: 1.6;
     }
 
-    @media (max-width: 481px) {
-      h1 {
-        line-height: 1.2;
-      }
+    #side-text{
+        font-size: 1em;
+    }
 
-      p{
-        margin-top: 12px;
-      }
+    @media (max-width: 481px) {
+        #flex {
+            padding-top: 25px;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            line-height: 1.2;
+        }
+
+        p {
+            display: none;
+        }
+
+        #side-text {
+            margin-top: 5px;
+        }
     }
 </style>

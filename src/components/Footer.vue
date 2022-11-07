@@ -13,7 +13,8 @@ export default {
 
 <style scoped>
     div {
-        margin-top: 120px;
+        margin-top: auto;
+        padding: 30px 0;
     }
 
     p {

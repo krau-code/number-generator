@@ -1,12 +1,14 @@
 <template>
-    <form @submit.prevent="generate">
-        <select v-model="chosenGame">
-            <option value="" disabled selected>Choose a Lotto Game</option>
-            <option v-for="game in lottoGames" :key="game.id" :value="game.id">{{ game.name }}</option>  
-        </select>
-        <button>Generate Number</button>
-    </form>
-    <p class="error">{{ error }}</p>
+    <div id="content">
+        <form @submit.prevent="generate">
+            <select v-model="chosenGame">
+                <option value="" disabled selected>Choose a Lotto Game</option>
+                <option v-for="game in lottoGames" :key="game.id" :value="game.id">{{ game.name }}</option>  
+            </select>
+            <button>Generate Number</button>
+        </form>
+        <p class="error">{{ error }}</p>
+    </div>
 </template>
 
 <script>
@@ -33,6 +35,10 @@ export default {
 </script>
 
 <style scoped>
+    #content {
+        margin-top: 1em;
+    }
+
     form {
         display: flex;
         justify-content: center;
@@ -80,6 +86,10 @@ export default {
     }
 
     @media (max-width: 481px) {
+        #content {
+            margin-top: 2em;
+        }
+
         form {
             display: grid;
         }

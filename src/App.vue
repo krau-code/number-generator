@@ -1,15 +1,18 @@
 <template>
-  <Header />
-  <Form :lottoGames="lottoGames" @generate="generate"/>
+  <div id="container">
+    <Header />
 
-  <!-- Random Numbers -->
-  <div class="flex" v-if="randomNumbers.length > 0">
-    <div v-for="number in randomNumbers" :key="number">
-      <input class="box" type="text" :value="number" disabled>
+    <Form :lottoGames="lottoGames" @generate="generate" />
+
+    <!-- Random Numbers -->
+    <div class="flex" v-if="randomNumbers.length > 0">
+      <div v-for="number in randomNumbers" :key="number">
+        <input class="box" type="text" :value="number" disabled>
+      </div>
     </div>
-  </div>
 
-  <Footer />
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -85,31 +88,42 @@ export default {
 </script>
 
 <style>
+  #container {
+    margin: 0 10rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  } 
+
+  .flex {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .box {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 0;
+    background: #393E46;
+    color: #eee;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+  }
+
+  @media (max-width: 481px) {
+    #container {
+      margin: 0 0.7em;
+    }
+
     .flex {
-        max-width: 500px;
-        margin: 60px auto;
-        padding: 0 10px;
-        display: flex;
-        justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .box {
-        width: 70px;
-        height: 70px;
-        border-radius: 10px;
-        border: 0;
-        background: #393E46;
-        color: #eee;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.5em;
-    }
-
-    @media (max-width: 481px) {
-      .flex {
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-      }
-    }
+  }
 </style>
